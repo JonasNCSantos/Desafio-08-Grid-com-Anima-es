@@ -66,7 +66,6 @@ header h1{
 
 main{
   margin: 1.4rem auto 6rem;
-  width: 32rem;
 }
 
 header p{
@@ -78,11 +77,13 @@ header p{
   text-align: center;
   color: var(--fc-body);
   margin: 4.3rem auto 6.3rem;
+  padding: 0 3.2rem;
 }
 
 .cards-group{
   display: grid;
   gap: 3.2rem;
+  margin: 0 3.2rem;
   animation: downtop 900ms 350ms;
 }
 
@@ -161,7 +162,51 @@ main p a{
   }
 }
 
-@media (min-width: 996px) {
+@media (min-width: 768px) {
+  header p {
+    width: 72rem;
+  }
+
+  main{
+    width: 72rem;
+  }
+  .cards-group{
+    grid-template-areas: 
+    'A B'
+    'C B'
+    'C D'
+    'E F'
+  }
+  .card-1{
+    grid-area: A;
+  }
+
+  .card-2{
+    grid-area: B;
+  }
+
+  .card-3{
+    grid-area: D;
+  }
+
+  .card-4{
+    grid-area: C;
+  }
+
+  .card-5{
+    grid-area: F;
+  }
+
+  .card-6{
+    grid-area: E;
+  }
+  .card-6 img{
+    height: 25rem;
+  }
+
+}
+
+@media (min-width: 1024px) {
   body{
     display: grid;
     grid-template-areas: 'A B' 'A B';
@@ -184,6 +229,8 @@ main p a{
     font-size: 2.4rem;
     line-height: 2rem;
     color: var(--fc-heading);
+    width: 27.5rem;
+    padding: 0;
   }
 
   main{
@@ -194,10 +241,7 @@ main p a{
 
   main p{
     display: block;
-
   }
-
-  
 
   .cards-group{
     padding: 5rem 8rem 3rem;
