@@ -14,6 +14,10 @@
   --fs-body: 1.6rem;
   --ff-primary: 'Staatliches', cursive;
   --ff-secundary: 'Palanquin', sans-serif;
+
+  /* Variaves Desktop */
+  --ff-p-heading: 'Roboto', sans-serif;
+  --ff-p-footer: 'Open Sans', sans-serif;
 }
 
 *{
@@ -121,6 +125,18 @@ header p{
 
 main p{
   display: none;
+  font-family: var(--ff-p-footer);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  color: var(--fc-tag);
+  text-align: center;
+}
+
+main p a{
+  text-decoration: none;
+  color: var(--fc-tag);
+  font-weight: bold;
 }
 
 @keyframes topdown{
@@ -162,18 +178,29 @@ main p{
     height: 100vh;
   }
 
+  header p{
+    font-family: var(--ff-p-heading);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2rem;
+    color: var(--fc-heading);
+  }
+
   main{
+    margin: 0;
     grid-area: B;
     width: 100%;
   }
 
   main p{
     display: block;
-    text-align: center;
+
   }
 
+  
+
   .cards-group{
-    padding: 6.4rem 8rem 5rem;
+    padding: 5rem 8rem 3rem;
     grid-template-areas: 'A B C' 'D B E' 'D F E';
   }
 
