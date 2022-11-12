@@ -28,10 +28,19 @@ body{
 }
 
 header{
-  background: var(--bg-heading);
+  width: 100vw;
+  text-align: center;
+}
+
+header::before{
+  content: '';
   width: 100%;
   height: 27.9rem;
-  text-align: center;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: var(--bg-heading);
 }
 
 header img{
@@ -53,17 +62,18 @@ header h1{
 
 main{
   margin: 1.4rem auto 6rem;
-  width: 32.0rem;
+  width: 32rem;
 }
 
-main p{
+header p{
   font-family: var(--ff-secundary);
   font-weight: 400;
+  width: 32rem;
   font-size: 2rem;
   line-height: 1.5rem;
   text-align: center;
   color: var(--fc-body);
-  margin-bottom: 6.3rem;
+  margin: 4.3rem auto 6.3rem;
 }
 
 .cards-group{
@@ -95,18 +105,22 @@ main p{
   animation: topdown 900ms 350ms;
 }
 
-.card-1 img, .card-3 img{
+.card-1 img, .card-3 img, .card-5 img{
   object-fit: cover;
   border-radius: 2rem;
   width: 100%;
   height: 25rem;
 }
 
-.card-2 img, .card-4 img{
+.card-2 img, .card-4 img, .card-6 img{
   width: 100%;
   height: 45rem;
   object-fit: cover;
   border-radius: 2rem;
+}
+
+main p{
+  display: none;
 }
 
 @keyframes topdown{
@@ -128,5 +142,72 @@ main p{
   100%{
       opacity: 1;
       transform: translateY(0);
+  }
+}
+
+@media (min-width: 996px) {
+  body{
+    display: grid;
+    grid-template-areas: 'A B' 'A B';
+    height: 100vh;
+  }
+
+  header{
+    grid-area: A;
+    width: 37.7rem;
+  }
+
+  header::before{
+    width: 37.7rem;
+    height: 100vh;
+  }
+
+  main{
+    grid-area: B;
+    width: 100%;
+  }
+
+  main p{
+    display: block;
+    text-align: center;
+  }
+
+  .cards-group{
+    padding: 6.4rem 8rem 5rem;
+    grid-template-areas: 'A B C' 'D B E' 'D F E';
+  }
+
+  .card-1 img, .card-3 img, .card-5 img{
+    width: 100%;
+    height: 15rem;
+  }
+  
+  .card-2 img, .card-4 img, .card-6 img{
+    width: 100%;
+    height: 35rem;
+  }
+
+  .card-1{
+    grid-area: A;
+  }
+
+  .card-2{
+    grid-area: B;
+  }
+
+  .card-3{
+    grid-area: F;
+  }
+
+  .card-4{
+    grid-area: D;
+  }
+
+  .card-5{
+    grid-area: C;
+  }
+
+  .card-6{
+    grid-area: E;
   }
 }
